@@ -21,16 +21,17 @@
         <button type="button" onclick="verifyCaptcha()">Proceed to Form</button>\
     </form>\
 \
-    <script>\
-        function verifyCaptcha() \{\
-            var response = grecaptcha.getResponse();\
-            if (response.length === 0) \{\
-                alert("Please complete the reCAPTCHA!");\
-            \} else \{\
-                window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSc4KyjymECiTh-7KqAERt9oiX9Q3qU5p3jvbB3rGOw6evDqzQ/viewform?usp=sharing";\
-            \}\
-        \}\
-    </script>\
+    <script>
+    function verifyCaptcha() {
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+            alert("Please complete the reCAPTCHA!");
+        } else {
+            window.location.href = "https://forms.gle/JaRdqcMeVsdgdPXC9";
+        }
+    }
+</script>
+
 </body>\
 </html>\
 }
