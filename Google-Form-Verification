@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Before Accessing the Form</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <h2>Verify You Are Human</h2>
+    <p>Click the checkbox below to proceed to the form.</p>
+
+    <form id="recaptchaForm">
+        <div class="g-recaptcha" data-sitekey="6LepU88qAAAAAAqFutn19k8UBDA1ST-H7cuRpgj0"></div>
+        <br>
+        <button type="button" onclick="verifyCaptcha()">Proceed to Form</button>
+    </form>
+
+    <script>
+        function verifyCaptcha() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                alert("Please complete the reCAPTCHA!");
+            } else {
+                window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSc4KyjymECiTh-7KqAERt9oiX9Q3qU5p3jvbB3rGOw6evDqzQ/viewform?usp=sharing";
+            }
+        }
+    </script>
+</body>
+</html>
