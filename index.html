@@ -1,37 +1,72 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2821
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html>\
-<head>\
-    <title>Verify Before Accessing the Form</title>\
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>\
-</head>\
-<body>\
-    <h2>Verify You Are Human</h2>\
-    <p>Click the checkbox below to proceed to the form.</p>\
-\
-    <form id="recaptchaForm">\
-        <div class="g-recaptcha" data-sitekey="6LepU88qAAAAAAqFutn19k8UBDA1ST-H7cuRpgj0"></div>\
-        <br>\
-        <button type="button" onclick="verifyCaptcha()">Proceed to Form</button>\
-    </form>\
-\
-    <script>
-    function verifyCaptcha() {
-        var response = grecaptcha.getResponse();
-        if (response.length === 0) {
-            alert("Please complete the reCAPTCHA!");
-        } else {
-            window.location.href = "https://forms.gle/JaRdqcMeVsdgdPXC9";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Before Accessing the Form</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
-    }
-</script>
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 22px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+        .g-recaptcha {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verify You Are Human</h2>
+        <p>Click the checkbox below to proceed to the form.</p>
 
-</body>\
-</html>\
-}
+        <form id="recaptchaForm">
+            <div class="g-recaptcha" data-sitekey="6LepU88qAAAAAAqFutn19k8UBDA1ST-H7cuRpgj0"></div>
+            <button type="button" onclick="verifyCaptcha()">Proceed to Form</button>
+        </form>
+    </div>
+
+    <script>
+        function verifyCaptcha() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                alert("Please complete the reCAPTCHA!");
+            } else {
+                window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSc4KyjymECiTh-7KqAERt9oiX9Q3qU5p3jvbB3rGOw6evDqzQ/viewform?usp=sharing";
+            }
+        }
+    </script>
+</body>
+</html>
